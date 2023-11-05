@@ -1,0 +1,20 @@
+import java.awt.*;
+
+public class MouseUtil {
+
+    public static void main (String []args){
+        while(true) {
+            try {
+                Thread.sleep(32000);
+                PointerInfo a = MouseInfo.getPointerInfo();
+                Point b = a.getLocation();
+                int x = (int) b.getX();
+                int y = (int) b.getY()+1;
+                // Move the cursor
+                Robot robot = new Robot();
+                robot.mouseMove(x, y);
+            } catch (AWTException | InterruptedException e) {
+            }
+        }
+    }
+}
